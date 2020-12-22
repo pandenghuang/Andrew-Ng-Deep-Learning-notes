@@ -307,7 +307,7 @@ def load_planar_dataset(randomness, seed):
 
     return X, Y
 
-def plot_decision_boundary(model, X, y):
+# def plot_decision_boundary(model, X, y):
     # Set min and max values and give it some padding
     x_min, x_max = X[0, :].min() - 1, X[0, :].max() + 1
     y_min, y_max = X[1, :].min() - 1, X[1, :].max() + 1
@@ -321,8 +321,31 @@ def plot_decision_boundary(model, X, y):
     plt.contourf(xx, yy, Z, cmap=plt.cm.Spectral)
     plt.ylabel('x2')
     plt.xlabel('x1')
-    plt.scatter(X[0, :], X[1, :], c=y, cmap=plt.cm.Spectral)
+    plt.scatter(X[0, :], X[1, :], c=np.squeeze(y), cmap=plt.cm.Spectral)
     plt.show()
+    
+    
+    #划分格子-得到每个格点的坐标-对每个格点的值进行预测(作为颜色区分)-画边界线-加上训练数据的散点图
+# def plot_decision_boundary(model, X, y):
+#     # Set min and max values and give it some padding #生成网格x、y的范围，不是整幅图的范围
+#     x_min, x_max = X[0, :].min() - 1, X[0, :].max() + 1
+#     y_min, y_max = X[1, :].min() - 1, X[1, :].max() + 1
+#     h = 0.01
+    
+#     # Generate a grid of points with distance h between them #生成网格矩阵
+#     xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))   
+#     #画格子图理解：1.xx返回每个格点的x坐标  2.yy返回的是每个格点的y坐标
+    
+#     # Predict the function value for the whole grid
+#     Z = model(np.c_[xx.ravel(), yy.ravel()]) 
+#     #model()括号里的参数是每个格点的坐标  #model的功能得到对应格点的预测结果 0或者1
+#     Z = Z.reshape(xx.shape)   
+#     # Plot the contour and training examples
+#     plt.contourf(xx, yy, Z, cmap=plt.cm.Spectral) #找边界线
+#     plt.ylabel('x2')
+#     plt.xlabel('x1')
+#     plt.scatter(X[0, :], X[1, :],  c=np.squeeze(y), cmap=plt.cm.Spectral)
+#     #plt.show()
     
 def load_2D_dataset():
     data = scipy.io.loadmat('datasets/data.mat')
