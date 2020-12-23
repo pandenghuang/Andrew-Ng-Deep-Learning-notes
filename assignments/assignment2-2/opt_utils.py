@@ -73,8 +73,10 @@ def initialize_parameters(layer_dims):
         parameters['W' + str(l)] = np.random.randn(layer_dims[l], layer_dims[l-1])*  np.sqrt(2 / layer_dims[l-1])
         parameters['b' + str(l)] = np.zeros((layer_dims[l], 1))
         
-        assert(parameters['W' + str(l)].shape == layer_dims[l], layer_dims[l-1])
-        assert(parameters['W' + str(l)].shape == layer_dims[l], 1)
+        # outer parentheses were added below to fix the following warning:
+        # SyntaxWarning: assertion is always true, perhaps remove parentheses?
+        assert(parameters['W' + str(l)].shape == (layer_dims[l], layer_dims[l-1]))
+        assert(parameters['b' + str(l)].shape == (layer_dims[l], 1))
         
     return parameters
 
@@ -229,7 +231,7 @@ def plot_decision_boundary(model, X, y):
     plt.contourf(xx, yy, Z, cmap=plt.cm.Spectral)
     plt.ylabel('x2')
     plt.xlabel('x1')
-    plt.scatter(X[0, :], X[1, :], c=y, cmap=plt.cm.Spectral)
+    plt.scatter(X[0, :], X[1, :], c=np.squeeze(y), cmap=plt.cm.Spectral)
     plt.show()
     
 def predict_dec(parameters, X):

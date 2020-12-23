@@ -5,12 +5,14 @@ def update_parameters_with_gd_test_case():
     learning_rate = 0.01
     W1 = np.random.randn(2,3)
     b1 = np.random.randn(2,1)
-    W2 = np.random.randn(3,3)
+    #W2 = np.random.randn(3,3)
+    W2 = np.random.randn(3,2)
     b2 = np.random.randn(3,1)
 
     dW1 = np.random.randn(2,3)
     db1 = np.random.randn(2,1)
-    dW2 = np.random.randn(3,3)
+    #dW2 = np.random.randn(3,3)
+    dW2 = np.random.randn(3,2)
     db2 = np.random.randn(3,1)
     
     parameters = {"W1": W1, "b1": b1, "W2": W2, "b2": b2}
@@ -37,7 +39,8 @@ def initialize_velocity_test_case():
     np.random.seed(1)
     W1 = np.random.randn(2,3)
     b1 = np.random.randn(2,1)
-    W2 = np.random.randn(3,3)
+    #W2 = np.random.randn(3,3)
+    W2 = np.random.randn(3,2)
     b2 = np.random.randn(3,1)
     parameters = {"W1": W1, "b1": b1, "W2": W2, "b2": b2}
     return parameters
