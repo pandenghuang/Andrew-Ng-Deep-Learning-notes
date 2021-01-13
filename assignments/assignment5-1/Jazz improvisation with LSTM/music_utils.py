@@ -87,6 +87,6 @@ def sequence_to_matrix(sequence, values_indices):
 
 def one_hot(x):
     x = K.argmax(x)
-    x = tf.one_hot(x, 78) 
+    x = tf.one_hot(x, 90) 
     x = RepeatVector(1)(x)
     return x

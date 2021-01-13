@@ -6,7 +6,7 @@ chords, abstract_grammars = get_musical_data('data/original_metheny.mid')
 corpus, tones, tones_indices, indices_tones = get_corpus_data(abstract_grammars)
 N_tones = len(set(corpus))
 n_a = 64
-x_initializer = np.zeros((1, 1, 78))
+x_initializer = np.zeros((1, 1, 90))
 a_initializer = np.zeros((1, n_a))
 c_initializer = np.zeros((1, n_a))
 
@@ -132,7 +132,7 @@ def predict_and_sample(inference_model, x_initializer = x_initializer, a_initial
     ### START CODE HERE ###
     pred = inference_model.predict([x_initializer, a_initializer, c_initializer])
     indices = np.argmax(pred, axis = -1)
-    results = to_categorical(indices, num_classes=78)
+    results = to_categorical(indices, num_classes=90)
     ### END CODE HERE ###
     
     return results, indices
