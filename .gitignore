@@ -1,10 +1,12 @@
 .DS_Store
 __pycache__
 .ipynb_checkpoints
-assignments/Course_4-Convolutional_Neural_Networks/Week-2/Assignment/ResNets/ResNet50.h5
-assignments/Course_4-Convolutional_Neural_Networks/Week-2/Assignment/ResNets/ResNet50.h5_backup
-assignments/Course_4-Convolutional_Neural_Networks/Week-2/Assignment/ResNets/ResNet50.h5
-assignments/Course_4-Convolutional_Neural_Networks/Week-2/Assignment/ResNets/ResNet50.h5
+assignments/C4W2/Assignment/ResNets/ResNet50.h5
+assignments/C4W2/Assignment/ResNets/ResNet50.h5_backup
+assignments/C4W2/Assignment/ResNets/ResNet50.h5
+assignments/C4W2/Assignment/ResNets/ResNet50.h5
 ~$iTechMemo.xlsb
-assignments/assignment5-2/Emojify/data/glove.6B.50d.txt
-assignments/assignment5-2/Word Vector Representation/data/glove.6B.50d.txt
+assignments/C5W2/Emojify/data/glove.6B.50d.txt
+assignments/C5W2/Word Vector Representation/data/glove.6B.50d.txt
+assignments/C5W3/Assignment/Trigger_word_detection/XY_train/X.npy
+assignments/C5W3/Assignment/Trigger_word_detection/XY_dev/X_dev.npy
