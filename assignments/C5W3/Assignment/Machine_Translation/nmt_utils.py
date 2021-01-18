@@ -38,6 +38,7 @@ FORMATS = ['short',
            'dd.MM.YY']
 
 # change this if you want it to work with another language
+#LOCALES = ['zh_CN']
 LOCALES = ['en_US']
 
 def load_date():
