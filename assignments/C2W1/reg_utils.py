@@ -307,7 +307,7 @@ def load_planar_dataset(randomness, seed):
 
     return X, Y
 
-# def plot_decision_boundary(model, X, y):
+def plot_decision_boundary(model, X, y):
     # Set min and max values and give it some padding
     x_min, x_max = X[0, :].min() - 1, X[0, :].max() + 1
     y_min, y_max = X[1, :].min() - 1, X[1, :].max() + 1
